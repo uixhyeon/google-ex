@@ -13,6 +13,7 @@ a {
   text-decoration: none;
   color: #333;
 }
+/* 
 nav {
   background-color: pink;
   display: flex;
@@ -36,8 +37,11 @@ nav > a:hover {
 }
 .navIcon-a{
     position: relative;
-}
+} */
+
+
 /* ㅅ 렐러티브 꼭 줘야함~~ */
+/* 
 .navIcon-a::after {
   display: block;
   content: "";
@@ -54,6 +58,8 @@ nav > a:hover {
 .navIcon-a:hover::after {
   opacity: 1;
 }
+ */
+
 /* 
 클래스명은 가능한 통일 ~~ 
 구지 코드를 길게 할 필요 없다~~
@@ -72,6 +78,8 @@ nav > a:hover {
 /* 
 attr 속성해라 속성이름 속성값으로 ()안거생김
 */
+
+/* 
 .navIcon-a::before{
 content: attr(aria-label);
 padding: 10px;
@@ -82,9 +90,13 @@ top: 36px;
 left: -50%;
 transform: translate(-25%);
 white-space: nowrap;
-/* 텍스트 글자 줄바꿈 방지 */
 opacity: 0;
-}
+} */
+
+
+
+/* 텍스트 글자 줄바꿈 방지 */
+/* 
 .navIcon-a:hover::before{
     opacity: 1;
 }
@@ -98,4 +110,84 @@ opacity: 0;
 }
 #login:hover {
   background-color: rgb(172, 128, 42);
+} */
+
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@ 
+스스로 한번~~해보기~~
+*/
+nav{
+    background-color: antiquewhite;
+display: flex;
+justify-content: flex-end;
+gap: 20px;
+padding: 20px;
+align-content: center;
+}
+.navIcon{
+    display: flex;
+    gap: 20px;
+    align-content: center;
+    position: relative;
+}
+.navIcon-a{
+    position: relative;
+}
+.navIcon-a::after{
+content: "";
+top: -4px  ;
+left: -5px;
+width: 34px;
+height: 34px;
+background-color: rgba(0,0,0,0.2);
+border-radius: 50%;
+position: absolute;
+display: block;
+opacity: 0;
+}
+.navIcon-a:hover::after{
+    opacity: 1;
+}
+.navIcon-a::before{
+    content: attr(aria-label);
+    position: absolute;
+    top: 30px ;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: rgba(0,0,0,0.2);
+    color: #fff;
+text-size: 12px;
+padding: 5px;
+}
+
+/*  */
+
+/*  */
+.search-bar{
+    justify-content: space-between;
+    max-width: 765px;
+    min-width: 337px;
+    background-color: blanchedalmond;
+display: flex;
+padding: 10px 25px;
+border-radius: 100px;
+border: 1px solid #ccc;
+box-shadow: 1px 2px 5px rgba(0,0,0,0.2);
+}
+.search-bar > input{
+width: 60%;
+border: none;
+padding: 5px;
+outline: none;
+}
+.search-icon{
+    width: 10%;
+    display: flex;
+    gap: 10px;
+    
+}
+.search-icon a{
+    width: calc(100% / 2);
+}
+.search-icon a img{
+    width: 100%;
 }
