@@ -1,0 +1,101 @@
+@charset "utf-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+nav {
+  background-color: pink;
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+  gap: 20px;
+  align-items: center;
+}
+nav > a:hover {
+  text-decoration: underline;
+}
+.navIcon {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  position: relative;
+  opacity: 0.5;
+}
+.navIcon-a:hover{
+    opacity: 1;
+}
+.navIcon-a{
+    position: relative;
+}
+/* ㅅ 렐러티브 꼭 줘야함~~ */
+.navIcon-a::after {
+  display: block;
+  content: "";
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  position: absolute;
+  top: -4px;
+  left: -5px;
+  width: 34px;
+  height: 34px;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.navIcon-a:hover::after {
+  opacity: 1;
+}
+/* 
+클래스명은 가능한 통일 ~~ 
+구지 코드를 길게 할 필요 없다~~
+.navIcon-b::after {
+  display: block;
+  content: "";
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 34px;
+  height: 34px;
+} 
+   */
+/* 
+attr 속성해라 속성이름 속성값으로 ()안거생김
+*/
+.navIcon-a::before{
+content: attr(aria-label);
+padding: 10px;
+background-color: rgba(0,0,0,0.8);
+color: #fff;
+position: absolute;
+top: 36px;
+left: -50%;
+transform: translate(-25%);
+white-space: nowrap;
+/* 텍스트 글자 줄바꿈 방지 */
+opacity: 0;
+}
+.navIcon-a:hover::before{
+    opacity: 1;
+}
+
+#login {
+  padding: 6px 12px;
+  border: none;
+  background-color: #4484f3;
+  color: #fff;
+  border-radius: 4px;
+}
+#login:hover {
+  background-color: rgb(172, 128, 42);
+}
