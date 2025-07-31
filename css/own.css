@@ -1,0 +1,58 @@
+@charset "UTF-8";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul,
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #333;
+    font size: 16px;
+}
+.navi{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+.navi-icon > a{
+    font-size: 16px;
+}
+.navi-icon{
+    display: flex;
+gap: 20px   ;
+padding: 0 20px 0 0 ;
+}
+.navi-icon button{
+border-style: none;
+padding: 5px 10px;
+border-radius: 5px;
+background-color: blue;
+color: white;
+}
+/* 메인임 */
+
+.main{
+    display: block;
+    align-items: center;
+    margin: auto;
+    /* 마진오토가 아닌가 ㅠㅠ */
+    width: 100%;
+    height: 100%;
+    background-color: bisque;
+}
+.main > .logo > img{
+    display: block;
+    align-items: center;
+}
+.searchBar{
+    display: flex;
+   justify-content: center;
+    width: 80%;
+    max-width: 800px;
+background-color: aliceblue;
+}
