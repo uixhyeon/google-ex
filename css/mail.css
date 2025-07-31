@@ -14,6 +14,14 @@ a {
   color: #333;
 }
 /* 
+헤더를 고정시키는걸 보이기
+이위해 일부러 줌.. 우너래는 높이주면 안댐 
+
+*/
+body{
+  height: 1500px;
+}
+/* 
 nav {
   background-color: pink;
   display: flex;
@@ -38,7 +46,6 @@ nav > a:hover {
 .navIcon-a{
     position: relative;
 } */
-
 
 /* ㅅ 렐러티브 꼭 줘야함~~ */
 /* 
@@ -93,8 +100,6 @@ white-space: nowrap;
 opacity: 0;
 } */
 
-
-
 /* 텍스트 글자 줄바꿈 방지 */
 /* 
 .navIcon-a:hover::before{
@@ -115,87 +120,218 @@ opacity: 0;
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@ 
 스스로 한번~~해보기~~
 */
-nav{
-    background-color: antiquewhite;
-display: flex;
-justify-content: flex-end;
-gap: 20px;
-padding: 20px;
-align-content: center;
+nav {
+
+  background-color: antiquewhite;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  padding: 20px;
+  align-content: center;
+  /* 헤더를 올리기위해 */
+    position: fixed;
+  width: 100vw;
+  top: 0  ;
+  left: 0;
+  z-index: 99;
+  /* 
+  헤더를 픽스하면 마진이 위로튕김
+  마진탑???
+  해결: 메인랩에 !!마진을 빼고 패딩을 줌!!!
+  */
 }
-.navIcon{
-    display: flex;
-    gap: 20px;
-    align-content: center;
-    position: relative;
+.navIcon {
+  display: flex;
+  gap: 20px;
+  align-content: center;
+  position: relative;
 }
-.navIcon-a{
-    position: relative;
+.navIcon-a {
+  position: relative;
 }
-.navIcon-a::after{
-content: "";
-top: -4px  ;
-left: -5px;
-width: 34px;
-height: 34px;
-background-color: rgba(0,0,0,0.2);
-border-radius: 50%;
+.navIcon-a::after {
+  content: "";
+  top: -4px;
+  left: -5px;
+  width: 34px;
+  height: 34px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  position: absolute;
+  display: block;
+  opacity: 0;
+}
+.navIcon-a:hover::after {
+  opacity: 1;
+}
+.navIcon-a::before {
+  content: attr(aria-label);
+  position: absolute;
+  top: 35px;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #fff;
+  text-size: 12px;
+  padding: 5px;
+  opacity: 0;
+  white-space: nowrap;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+.navIcon-a:hover:before {
+  opacity: 1;
+  visibility: visible;
+}
+
+/*  */
+
+/*  */
+.search-bar {
+  justify-content: space-between;
+  max-width: 765px;
+  min-width: 337px;
+  background-color: blanchedalmond;
+  display: flex;
+  padding: 10px 25px;
+  border-radius: 100px;
+  border: 1px solid #ccc;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);
+}
+.search-bar > input {
+  width: 60%;
+  border: none;
+  padding: 5px;
+  outline: none;
+}
+.search-icon {
+  width: 10%;
+  display: flex;
+  gap: 10px;
+}
+.search-icon a {
+  width: calc(100% / 2);
+}
+.search-icon a img {
+  width: 100%;
+}
+/* 7/31일 추가 */
+/* 메인 */
+/* 메인랩이 인너느낌 */
+.main-wrap {
+  width: 70%;
+  margin: 100px auto;
+  /* 
+  마진값을 두개 적으면..뭐였지 
+  위아래 좌우
+  */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  min-width: 390px;
+  max-width: 1280px;
+}
+.g-logo {
+  width: 50%;
+  max-width: 250px;
+  min-width: 180px;
+}
+.search-bar {
+  width: 100%;
+  align-items: center;
+  background-color: #fff;
+}
+/* 검색리스트 */
+.search-plus {
+  width: 65%;
+  max-width: 600px;
+  min-width: 200px;
+  background-color: brown;
+}
+.search-plus ul {
+  display: flex;
+}
+.search-plus ul li {
+  width: calc(100% / 5);
+  background-color: rgb(255, 255, 255);
+}
+.bg {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.bg > img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.search-plus ul li {
+ position: relative;  width: calc(100% / 5);
+
+}
+/* a에 빠진... */
+.search-plus ul li a{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+.search-plus ul li a span {
+  font-size: 14px;
+  /* 말줄임표시 *기억* */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 80px;
+}
+/* 호버했을떼 나오는 배경 */
+.hover-bg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background:rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: all 0.5s;
+    border-radius: 5px;
+}
+.hover-bg img{
 position: absolute;
-display: block;
+right: 0;
+top: 5px;
 opacity: 0;
 }
-.navIcon-a:hover::after{
-    opacity: 1;
+.search-plus ul li:hover .hover-bg{
+  opacity: 1;
 }
-.navIcon-a::before{
-    content: attr(aria-label);
-    position: absolute;
-    top: 35px ;
-    left: 50%;
-    transform: translate(-50%);
-    background-color: rgba(0,0,0,0.2);
-    color: #fff;
-text-size: 12px;
-padding: 5px;
-opacity: 0;
-white-space: nowrap;
-visibility: hidden;
-transition: opacity 0.3s ease;
+.search-plus ul li:hover .hover-bg img{
+  opacity: 1;
+  transition: all 1s;
+  transition-delay: 0.5s;
 }
-.navIcon-a:hover:before{
-    opacity: 1;
-    visibility: visible;
-}
+.search-btn{
+  width: 50%;
 
-/*  */
-
-/*  */
-.search-bar{
-    justify-content: space-between;
-    max-width: 765px;
-    min-width: 337px;
-    background-color: blanchedalmond;
+background-color: none;
 display: flex;
-padding: 10px 25px;
-border-radius: 100px;
-border: 1px solid #ccc;
-box-shadow: 1px 2px 5px rgba(0,0,0,0.2);
+justify-content: center;
+gap: 10px;
 }
-.search-bar > input{
-width: 60%;
-border: none;
-padding: 5px;
-outline: none;
+.search-btn button{
+  border: 0;
+  padding: 5px 15px;
+  background-color: #f4f4f4f4;
+  border-radius: 5px;
 }
-.search-icon{
-    width: 10%;
-    display: flex;
-    gap: 10px;
-    
-}
-.search-icon a{
-    width: calc(100% / 2);
-}
-.search-icon a img{
-    width: 100%;
+.search-btn button:hover{
+  color: #333;
+  background: linear-gradient(to bottom, #ffff , #f6f6f6 47%, #ededed 100%);
+  box-shadow: rgba(0, 0, 0, 0.2);
 }

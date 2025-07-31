@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로그인 페이지</title>
+    <link rel="stylesheet" href="/css/login.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h2>회원가입</h2>
+      <form action="#">
+        <div class="input-group">
+          <label for="userName"><i class="fas fa-user"></i></label>
+          <input type="text" id="userName" placeholder="이름을 입력하세요" />
+        </div>
+        <div class="input-group">
+          <label for="userEmail"><i class="fas fa-envelope"></i></label>
+          <input
+            type="email"
+            id="userEmail"
+            placeholder="이메일을 입력하세요"
+          />
+        </div>
+        <div class="input-group">
+          <label for="userPassword"><i class="fas fa-key"></i></label>
+          <input
+            type="password"
+            id="userPassword"
+            placeholder="비밀번호를 입력하세요"
+          />
+        </div>
+        <div class="input-group">
+          <label for="userPassword1"
+            ><i class="fas fa-key" style="color: #5d0909"></i
+          ></label>
+          <input
+            type="password"
+            id="userPassword1"
+            placeholder="비밀번호 확인"
+          />
+        </div>
+        <button type="submit">가입하기</button>
+        <button type="button">공지사항</button>
+      </form>
+    </div>
+  </body>
+</html>
